@@ -4,7 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
-import { ToastrService } from 'ngx-toastr'; // ⬅️ Adicionado aqui
+import { ToastrService } from 'ngx-toastr';
 
 interface LoginForm {
   email: FormControl,
@@ -12,7 +12,7 @@ interface LoginForm {
 }
 
 @Component({
-  selector: 'app-signup',
+  selector: 'app-login',
   standalone: true,
   imports: [
     DefaultLoginLayoutComponent,
@@ -31,7 +31,7 @@ export class LoginComponent {
   constructor(
     private router: Router,
     private loginService: LoginService,
-    private toastService: ToastrService // ⬅️ Injeção correta
+    private toastService: ToastrService
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
